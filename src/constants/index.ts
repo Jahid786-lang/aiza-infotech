@@ -22,6 +22,7 @@ import {
   nodejs,
   mongodb,
   git,
+  
   figma,
   docker,
   meta,
@@ -32,6 +33,10 @@ import {
   jobit,
   tripguide,
   threejs,
+
+  novelbeat,
+  TMV,
+  kiwi,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -182,67 +187,67 @@ const testimonials: TTestimonial[] = [
 
 const projects: TProject[] = [
   {
-    name: "Car Rent",
+    name: "NovelBeat",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Published full-featured novel reading and writing app on Google Play Store.Implemented chapter reading, bookmarking.",
     tags: [
       {
-        name: "react",
+        name: "React-Native",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Redux",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Firebase",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    sourceCodeLink: "https://github.com/",
+    image: novelbeat,
+    sourceCodeLink: "https://play.google.com/store/apps/dev?id=8567697144565791405",
   },
   {
-    name: "Job IT",
+    name: "Through Me Veggies",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Designed and developed complete grocery app with product catalog, search, cart, check-out, and order history.Implemented authentication, secure session handling,Integrated Razorpay for secure payments.Published and maintained on Google Play Store with versioning and bug fixes.",
     tags: [
       {
-        name: "react",
+        name: "React-Native",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Razorpay",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "Rest API",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    sourceCodeLink: "https://github.com/",
+    image: TMV,
+    sourceCodeLink: "https://play.google.com/store/apps/details?id=com.chetan03.throughmeveggies",
   },
   {
-    name: "Trip Guide",
+    name: "Kiwi Property",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Developed property listing app with sale/rent features.Implemented authentication, secure sessions, and Play Store deployment.",
     tags: [
       {
-        name: "nextjs",
+        name: "React-Native",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Redux",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "react-paper",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    sourceCodeLink: "https://github.com/",
+    image: kiwi,
+    sourceCodeLink: "https://play.google.com/store/apps/details?id=com.kiwiresidences",
   },
 ];
 

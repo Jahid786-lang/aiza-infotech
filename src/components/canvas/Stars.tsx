@@ -19,12 +19,12 @@ const Stars = (props: any) => {
   });
 
   return (
-    <group rotation={[0, 0, Math.PI / 4]}>
+    <group rotation={[0, 0, Math.PI / 2]}>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
           color="#f272c8"
-          size={0.002}
+          size={0.003}
           sizeAttenuation={true}
           depthWrite={false}
         />
@@ -35,7 +35,7 @@ const Stars = (props: any) => {
 
 const StarsCanvas = () => {
   return (
-    <div className="absolute inset-0 z-[-1] h-auto w-full">
+    <div className="absolute inset-0 z-[-1] h-auto w-full bg-gradient-to-r from-[#090b3c] via-[#01021d] to-[#050ba0] ">
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
           <Stars />

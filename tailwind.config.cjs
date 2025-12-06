@@ -17,10 +17,11 @@ module.exports = {
       },
       screens: {
         xs: "450px",
+        xms: '300px',
       },
-      // backgroundImage: {
-      //   "hero-pattern": "url('/src/assets/herobg.png')",
-      // },
+      backgroundImage: {
+        "hero-pattern": "url('/src/assets/hero-bg.png')",
+      },
     },
   },
   plugins: [],

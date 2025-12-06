@@ -6,6 +6,8 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import closeIcon from "./close.png";
+import menuDot from "./dots.png";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -26,17 +28,22 @@ import shopify from "./company/shopify.png";
 import ki from "./company/ki.jpg";
 import cosmos from "./company/3.webp";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import novelbeat from "./work/novelbeat.png";
+import TMV from "./work/TMV.png";
+import kiwi from "./work/kiwi.png";
 
 import earthDiffuse from "./planets/earth_diffuse.jpeg";
 import earth_normal from "./planets/earth_normal.jpg";
+import playstore from "./planets/playstore.png";
 
 export {
-earthDiffuse,
-earth_normal,
+  earthDiffuse,
+  earth_normal,
 
+  novelbeat,
+  TMV,
+  kiwi,
+  playstore,
   logo,
   backend,
   creator,
@@ -45,6 +52,8 @@ earth_normal,
   github,
   menu,
   close,
+  closeIcon,
+  menuDot,
   css,
   docker,
   figma,
@@ -62,7 +71,4 @@ earth_normal,
   shopify,
   ki,
   cosmos,
-  carrent,
-  jobit,
-  tripguide,
 };

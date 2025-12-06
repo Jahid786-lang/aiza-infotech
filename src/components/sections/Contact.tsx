@@ -67,11 +67,11 @@ const Contact = () => {
 
   return (
     <div
-      className={`flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row`}
+      className={`flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row `}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="bg-black-100 flex-[0.75] rounded-2xl p-8"
+        className="bg-gradient-to-r from-[#060cc0] via-[#01021d] to-[#050ba0] flex-[0.75] rounded-2xl p-8 opacity-4"
       >
         <Header useMotion={false} {...config.contact} />
 
@@ -95,7 +95,7 @@ const Contact = () => {
                   value={form[`${input}`]}
                   onChange={handleChange}
                   placeholder={placeholder}
-                  className="bg-tertiary placeholder:text-secondary rounded-lg border-none px-6 py-4 font-medium text-white outline-none"
+                  className="bg-[#20215f]  placeholder:text-secondary rounded-lg border-none px-6 py-4 font-medium text-white outline-none"
                   {...(input === "message" && { rows: 7 })}
                 />
               </label>

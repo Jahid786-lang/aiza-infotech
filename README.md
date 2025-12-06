@@ -90,7 +90,7 @@ reactjs18-3d-portfolio/
 ├   ├   ├── scene.bin
 ├   ├   └── scene.gltf
 ├   ├── logo.png
-├   └── logo.svg
+├   └── logo.png
 ├── .env
 ├── .eslintignore
 ├── .eslintrc.cjs
