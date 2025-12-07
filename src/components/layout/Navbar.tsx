@@ -58,7 +58,7 @@ const Navbar = () => {
           {navLinks.map(nav => (
             <li
               key={nav.id}
-              className={`$ {
+              className={`${
                 active === nav.id ? 'text-white' : 'text-secondary'
               } cursor-pointer text-[18px] font-medium hover:text-white`}
             >
@@ -94,7 +94,7 @@ const Navbar = () => {
               {navLinks.map(nav => (
                 <li
                   key={nav.id}
-                  className={`font-poppins cursor-pointer text-[16px] font-medium $ {
+                  className={`font-poppins cursor-pointer text-[16px] font-medium ${
                     active === nav.id ? 'text-white' : 'text-secondary'
                   }`}
                   onClick={() => setToggle(!toggle)}

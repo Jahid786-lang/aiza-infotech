@@ -1,7 +1,111 @@
-import type { TMotion } from "../types";
-import { Variants } from "framer-motion";
+// import type { TMotion } from "../types";
+// import { Variants } from "framer-motion";
 
-export const textVariant = () => {
+// export const textVariant = () => {
+//   return {
+//     hidden: {
+//       y: -50,
+//       opacity: 0,
+//     },
+//     show: {
+//       y: 0,
+//       opacity: 1,
+//       transition: {
+//         type: "spring",
+//         duration: 1.25,
+//       },
+//     },
+//   };
+// };
+
+// export const fadeIn = (
+//   direction: TMotion["direction"],
+//   type: TMotion["type"],
+//   delay: TMotion["delay"],
+//   duration: TMotion["duration"]
+// ): Variants => {
+//   const allowedTypes = ["tween", "spring"] as const;
+//   const safeType = allowedTypes.includes(type as any) ? type : undefined;
+//   return {
+//     hidden: {
+//       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
+//       y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+//       opacity: 0,
+//     },
+//     show: {
+//       x: 0,
+//       y: 0,
+//       opacity: 1,
+//       transition: {
+//         ...(safeType ? { type: safeType } : {}),
+//         delay,
+//         duration,
+//         ease: "easeOut",
+//       },
+//     },
+//   };
+// };
+
+// export const zoomIn = (
+//   delay: TMotion["delay"],
+//   duration: TMotion["duration"]
+// ) => {
+//   return {
+//     hidden: {
+//       scale: 0,
+//       opacity: 0,
+//     },
+//     show: {
+//       scale: 1,
+//       opacity: 1,
+//       transition: {
+//         type: "tween",
+//         delay,
+//         duration,
+//         ease: "easeOut",
+//       },
+//     },
+//   };
+// };
+
+// export const slideIn = (
+//   direction: TMotion["direction"],
+//   type: TMotion["type"],
+//   delay: TMotion["delay"],
+//   duration: TMotion["duration"]
+// ): Variants => {
+//   const allowedTypes = ["tween", "spring"] as const;
+//   const safeType = allowedTypes.includes(type as any) ? type : undefined;
+//   const xFrom = direction === "left"
+//     ? "-100%"
+//     : direction === "right"
+//     ? "100%"
+//     : 0;
+//   const yFrom = direction === "up" ? "100%" : direction === "down" ? "100%" : 0;
+//   return {
+//     hidden: {
+//       x: xFrom,
+//       y: yFrom,
+//     },
+//     show: {
+//       x: 0,
+//       y: 0,
+//       transition: {
+//         ...(safeType ? { type: safeType } : {}),
+//         delay,
+//         duration,
+//         ease: "easeOut",
+//       },
+//     },
+//   };
+// };
+
+
+import type { TMotion } from "../types";
+import type { Variants } from "framer-motion";
+
+// 👇 1) TEXT VARIANT
+export const textVariant = (): Variants => {
   return {
     hidden: {
       y: -50,
@@ -11,21 +115,31 @@ export const textVariant = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring",      // literal, not generic string
         duration: 1.25,
       },
     },
   };
 };
 
+// Helper: allowed motion types
+const allowedTypes = ["tween", "spring"] as const;
+type AllowedType = (typeof allowedTypes)[number];
+
+// 👇 2) FADE IN
 export const fadeIn = (
   direction: TMotion["direction"],
   type: TMotion["type"],
   delay: TMotion["delay"],
   duration: TMotion["duration"]
 ): Variants => {
-  const allowedTypes = ["tween", "spring"] as const;
-  const safeType = allowedTypes.includes(type as any) ? type : undefined;
+  // Narrow type safely
+  const safeType: AllowedType | undefined = allowedTypes.includes(
+    type as AllowedType
+  )
+    ? (type as AllowedType)
+    : undefined;
+
   return {
     hidden: {
       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
@@ -46,10 +160,11 @@ export const fadeIn = (
   };
 };
 
+// 👇 3) ZOOM IN
 export const zoomIn = (
   delay: TMotion["delay"],
   duration: TMotion["duration"]
-) => {
+): Variants => {
   return {
     hidden: {
       scale: 0,
@@ -68,20 +183,24 @@ export const zoomIn = (
   };
 };
 
+// 👇 4) SLIDE IN
 export const slideIn = (
   direction: TMotion["direction"],
   type: TMotion["type"],
   delay: TMotion["delay"],
   duration: TMotion["duration"]
 ): Variants => {
-  const allowedTypes = ["tween", "spring"] as const;
-  const safeType = allowedTypes.includes(type as any) ? type : undefined;
-  const xFrom = direction === "left"
-    ? "-100%"
-    : direction === "right"
-    ? "100%"
-    : 0;
-  const yFrom = direction === "up" ? "100%" : direction === "down" ? "100%" : 0;
+  const safeType: AllowedType | undefined = allowedTypes.includes(
+    type as AllowedType
+  )
+    ? (type as AllowedType)
+    : undefined;
+
+  const xFrom =
+    direction === "left" ? "-100%" : direction === "right" ? "100%" : 0;
+  const yFrom =
+    direction === "up" ? "100%" : direction === "down" ? "100%" : 0;
+
   return {
     hidden: {
       x: xFrom,
