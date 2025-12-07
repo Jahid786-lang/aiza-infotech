@@ -13,17 +13,15 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className="bg-gradient-to-r from-[#090b3c] via-[#01021d] to-[#050ba0] relative z-0">
-        <div className=" bg-hero-pattern bg-cover bg-center bg-no-repeat">
+      <div className="bg-linear-to-r from-[#090b3c] via-[#01021d] to-[#050ba0] justify-center items-center">
+        <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
           <Navbar />
           <Hero />
-          {/* <StarsCanvas /> */}
         </div>
         <About />
         <Experience />
         <Tech />
         <Works />
-        {/* <Feedbacks /> */}
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />

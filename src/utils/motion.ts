@@ -24,6 +24,8 @@ export const fadeIn = (
   delay: TMotion["delay"],
   duration: TMotion["duration"]
 ): Variants => {
+  const allowedTypes = ["tween", "spring"] as const;
+  const safeType = allowedTypes.includes(type as any) ? type : undefined;
   return {
     hidden: {
       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
@@ -35,7 +37,7 @@ export const fadeIn = (
       y: 0,
       opacity: 1,
       transition: {
-        type,
+        ...(safeType ? { type: safeType } : {}),
         delay,
         duration,
         ease: "easeOut",
@@ -71,17 +73,25 @@ export const slideIn = (
   type: TMotion["type"],
   delay: TMotion["delay"],
   duration: TMotion["duration"]
-) => {
+): Variants => {
+  const allowedTypes = ["tween", "spring"] as const;
+  const safeType = allowedTypes.includes(type as any) ? type : undefined;
+  const xFrom = direction === "left"
+    ? "-100%"
+    : direction === "right"
+    ? "100%"
+    : 0;
+  const yFrom = direction === "up" ? "100%" : direction === "down" ? "100%" : 0;
   return {
     hidden: {
-      x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
-      y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
+      x: xFrom,
+      y: yFrom,
     },
     show: {
       x: 0,
       y: 0,
       transition: {
-        type,
+        ...(safeType ? { type: safeType } : {}),
         delay,
         duration,
         ease: "easeOut",

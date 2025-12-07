@@ -19,7 +19,7 @@ const emailjsConfig = {
 };
 
 const Contact = () => {
-  const formRef = useRef<React.LegacyRef<HTMLFormElement> | undefined>();
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [form, setForm] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(false);
 
@@ -67,16 +67,15 @@ const Contact = () => {
 
   return (
     <div
-      className={`flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row `}
+      className={`flex flex-col-reverse gap-10 overflow-hidden xl:mt-8 xl:flex-row `}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="bg-gradient-to-r from-[#060cc0] via-[#01021d] to-[#050ba0] flex-[0.75] rounded-2xl p-8 opacity-4"
+        className="bg-linear-to-r from-[#060cc0] via-[#01021d] to-[#050ba0] flex-[0.75] rounded-2xl px-8 py-4"
       >
         <Header useMotion={false} {...config.contact} />
 
         <form
-          // @ts-expect-error
           ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"

@@ -23,15 +23,11 @@ import {
   mongodb,
   git,
   
-  figma,
+  // figma,
   docker,
-  meta,
+  // meta,
   ki,
   cosmos,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
 
   novelbeat,
